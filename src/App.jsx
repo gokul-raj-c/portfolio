@@ -2,11 +2,37 @@ import React from "react";
 import "./App.css";
 import { useState } from "react";
 
+import { FaCode } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
+import {
+  FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaGithub, FaLinux, FaLinkedin, FaInstagram, FaFacebook
+} from "react-icons/fa";
+
+import {
+  SiJavascript, SiHtml5, SiCss3, SiExpress,
+  SiFlask, SiPhp, SiTensorflow,
+  SiPytorch, SiOpencv, SiMongodb, SiMysql,SiC,
+  SiCplusplus
+} from "react-icons/si";
+
 // --- TECH STACK ---
 const TECH_CATEGORIES = {
+  "Programming Languages": [
+    { name: "C", icon: <SiC />, color: "#A8B9CC" },
+    { name: "C++", icon: <SiCplusplus />, color: "#00599C" },
+    { name: "Python", icon: <FaPython />, color: "#3776AB" },
+    { name: "Java", icon: <FaJava />, color: "#f89820" },
+    { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
+    { name: "PHP", icon: <SiPhp />, color: "#777BB4" },
+  ],
+
+  "Core CS": [
+    { name: "Data Structures", icon: <FaCode />, color: "#2563eb" },
+    { name: "OOP", icon: <FaCode />, color: "#f59e0b" },
+  ],
+
   "Frontend": [
     { name: "React", icon: <FaReact />, color: "#61DAFB" },
-    { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
     { name: "HTML5", icon: <SiHtml5 />, color: "#E34F26" },
     { name: "CSS3", icon: <SiCss3 />, color: "#1572B6" },
   ],
@@ -15,9 +41,6 @@ const TECH_CATEGORIES = {
     { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
     { name: "Express.js", icon: <SiExpress />, color: "#ffffff" },
     { name: "Flask", icon: <SiFlask />, color: "#ffffff" },
-    { name: "PHP", icon: <SiPhp />, color: "#777BB4" },
-    { name: "Python", icon: <FaPython />, color: "#3776AB" },
-    { name: "Java", icon: <FaJava />, color: "#f89820" },
   ],
 
   "AI / Machine Learning": [
@@ -25,6 +48,7 @@ const TECH_CATEGORIES = {
     { name: "Deep Learning", icon: <SiPytorch />, color: "#EE4C2C" },
     { name: "YOLO", icon: <SiOpencv />, color: "#5C3EE8" },
     { name: "OpenCV", icon: <SiOpencv />, color: "#5C3EE8" },
+    { name: "CNN", icon: <SiTensorflow />, color: "#FF6F00" },
   ],
 
   "Database": [
@@ -36,7 +60,7 @@ const TECH_CATEGORIES = {
     { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
     { name: "GitHub", icon: <FaGithub />, color: "#ffffff" },
     { name: "Linux", icon: <FaLinux />, color: "#FCC624" },
-    
+    { name: "VS Code", icon: <VscVscode />, color: "#007ACC" },
   ]
 };
 
@@ -45,67 +69,63 @@ const PROJECTS = [
       id: 1,
       title: "Repair Vision", 
       desc: "Car Damage Detection",
+      image: repairvision,
       longDesc: "A deep learning based car damage detection system that analyzes vehicle images, detects damaged parts using YOLO, and classifies damage type and severity through an interactive web interface.",
       stack: ["Python", "Flask", "Deep Learning", "YOLO", "OpenCV", "CNN", "HTML", "CSS", "JavaScript"],
       color: "#1d4ed8",
-      github: "https://github.com/"
+      github: "https://github.com/gokul-raj-c/Repair-Vision"
   },
   { 
       id: 2,
       title: "Authentify", 
       desc: "Deep Fake Image Detection",
+      image: authentify,
       longDesc: "Authentify is an AI-powered deep fake image detection system that analyzes images using deep learning techniques to identify manipulated or synthetic content.",
       stack: ["Python","Flask","Deep Learning","CNN", "OpenCV", "HTML", "CSS", "JavaScript"],
       color: "#047857",
-      github: "https://github.com/"
+      github: "https://github.com/gokul-raj-c/Authentify"
   },
   { 
       id: 3,
       title: "Career Vista", 
       desc: "AI Career Guidance Platform",
+      image: careervista,
       longDesc: "AI-powered platform that analyzes skills and suggests career paths with learning roadmap.",
       stack: ["Python", "Flask", "Machine Learning", "CNN", "OpenCV", "HTML", "CSS", "JavaScript"],
       color: "#6d28d9",
-      github: "https://github.com/"
+      github: "https://github.com/gokul-raj-c/Career-Vista"
   },
   { 
       id: 4,
       title: "Garage4", 
       desc: "Car Rental Web App",
+      image: garage4,
       longDesc: "Car rental system with booking, authentication and admin dashboard.",
       stack: ["PHP","MySQL","JavaScript","HTML","CSS"],
       color: "#c2410c",
-      github: "https://github.com/"
+      github: "https://github.com/gokul-raj-c/Garage4"
   },
   { 
       id: 5,
       title: "Grab-It",
       desc: "E-commerce Web App",
+      image: grabit,
       longDesc: "Full stack ecommerce system with cart, order and admin panel.",
       stack: ["React","Node.js","Express","MongoDB"],
       color: "#991b1b",
-      github: "https://github.com/"
+      github: "https://github.com/gokul-raj-c/grab-it"
   },
   { 
       id: 6, 
       title: "Quizzo",
       desc: "Quiz Web Application",
+      image: quizzo,
       longDesc: "Interactive quiz app with timer, score tracking and admin panel.",
       stack: ["Java","MongoDB"],
       color: "#7c3aed",
-      github: "https://github.com/"
+      github: "https://github.com/gokul-raj-c/Quizzo"
   }
 ];
-
-import {
-  FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaGithub, FaLinux, FaLinkedin, FaInstagram, FaFacebook
-} from "react-icons/fa";
-
-import {
-  SiJavascript, SiHtml5, SiCss3, SiExpress,
-  SiFlask, SiPhp, SiTensorflow,
-  SiPytorch, SiOpencv, SiMongodb, SiMysql
-} from "react-icons/si";
 
 
 // --- IMAGE IMPORTS (Placeholders) ---
@@ -113,6 +133,13 @@ import python1 from './assets/certificate/Python1.png';
 import python2 from './assets/certificate/Python2.png';
 import mern from './assets/certificate/mern.png';
 import iot from './assets/certificate/iot.png';
+
+import authentify from './assets/projects/authentify.png';
+import careervista from './assets/projects/careervista.png';
+import garage4 from './assets/projects/garage4.png';
+import grabit from './assets/projects/grabit.png';
+import quizzo from './assets/projects/quizzo.png';
+import repairvision from './assets/projects/repairvision.png';
 
 
 // --- DATA: CERTIFICATES ---
@@ -156,14 +183,15 @@ function App() {
           <h3>GOKUL RAJ C</h3>
         </div>
 
-        <ul className="nav-links">
-          <li>INDEX</li>
-          <li>ABOUT</li>
-          <li>STACK</li>
-          <li>PROJECTS</li>
-          <li>CERTIFICATES</li>
-          <li>HISTORY</li>
-        </ul>
+       <ul className="nav-links">
+  <li><a href="#home">INDEX</a></li>
+  <li><a href="#about">ABOUT</a></li>
+  <li><a href="#tech">STACK</a></li>
+  <li><a href="#projects">PROJECTS</a></li>
+  <li><a href="#certificate">CERTIFICATES</a></li>
+  <li><a href="#education">EDUCATION</a></li>
+  <li><a href="#contact">CONTACT</a></li>
+</ul>
 
         <div className="status">
           <span className="dot"></span>
@@ -173,7 +201,7 @@ function App() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section className="hero">
+      <section id="home" className="hero">
 
         <div className="tag">HELLO WORLD, I'M</div>
 
@@ -181,51 +209,55 @@ function App() {
         <h2>MCA STUDENT & SOFTWARE DEVELOPER</h2>
 
         <p>
-          I build scalable web and AI-powered applications from <b>Kerala, India.</b>
+          I build scalable web and AI-powered applications & I'm from <b>Kerala, India.</b>
           <br />
-          Specialized in <b>Java, Python, Machine Learning, and Full Stack Development.</b>
+          Specialized in <b>Java, Python, Machine Learning, Deep Learning and Full Stack Development.</b>
         </p>
 
         <div className="buttons">
-          <button className="btn-primary">View Work →</button>
-          <button className="btn-outline">Contact</button>
-        </div>
+
+  <a href="#projects">
+    <button className="btn-primary">View Work →</button>
+  </a>
+
+  <a href="#contact">
+    <button className="btn-outline">Contact</button>
+  </a>
+
+</div>
 
         {/* SOCIAL ICONS */}
   <div className="socials">
-    <a href="https://github.com/YOURUSERNAME" target="_blank">
+    <a href="https://github.com/gokul-raj-c" target="_blank">
       <FaGithub />
     </a>
 
-    <a href="https://linkedin.com/in/YOURUSERNAME" target="_blank">
+    <a href="https://www.linkedin.com/in/gokul-raj-c" target="_blank">
       <FaLinkedin />
     </a>
 
-    <a href="https://instagram.com/YOURUSERNAME" target="_blank">
+    <a href="https://www.instagram.com/gokulrajc_" target="_blank">
       <FaInstagram />
     </a>
 
-    <a href="https://facebook.com/YOURUSERNAME" target="_blank">
-      <FaFacebook />
-    </a>
   </div>
 
       </section>
 
       {/* ===== ABOUT SECTION ===== */}
 {/* ===== ABOUT SECTION ===== */}
-<section className="about">
+<section id="about" className="about">
 
   <div className="about-left">
     <h2>About & Services</h2>
 
     <p>
       I am currently pursuing my Master of Computer Applications (MCA) at 
-      Muthoot Institute of Technology and Science, after completing my BCA. 
+      Muthoot Institute of Technology and Science, after completing my BCA. <br></br>
       I am passionate about software development, machine learning, and building 
       real-world applications that solve meaningful problems.
       <br /><br />
-      I have developed multiple projects in AI, full stack web development, and 
+      I have developed multiple projects in ML, DL, full stack web development, and 
       Java-based applications. I enjoy learning new technologies and continuously 
       improving my problem-solving and development skills.
     </p>
@@ -279,7 +311,7 @@ function App() {
 </section>
 
 {/* ===== TECH STACK SECTION ===== */}
-<section className="tech-section">
+<section id="tech" className="tech-section">
 
   <div className="tech-header">
     <h2>Technical Specification</h2>
@@ -304,7 +336,7 @@ function App() {
 
 </section>
 
-<section className="projects">
+<section id="projects" className="projects">
   <h2 className="section-title">Featured Deployments</h2>
 
   <div className="project-grid">
@@ -318,7 +350,9 @@ function App() {
           className="project-top"
           style={{background: project.color}}
         >
-          <div className="preview-box"></div>
+          <div className="preview-box">
+  <span>PREVIEW.JPG</span>
+</div>
         </div>
 
         <div className="project-bottom">
@@ -348,27 +382,35 @@ function App() {
 
       <div className="modal-body">
 
-        <p className="long-desc">{selectedProject.longDesc}</p>
+  {/* IMAGE */}
+  <div className="modal-image">
+    <img src={selectedProject.image} alt={selectedProject.title} />
+  </div>
 
-        <h4>Tech Stack</h4>
-        <div className="stack-tags">
-          {selectedProject.stack.map((tech,i)=>(
-            <span key={i}>{tech}</span>
-          ))}
-        </div>
+  <p className="long-desc">{selectedProject.longDesc}</p>
 
-        <div className="project-links">
-          <a href={selectedProject.github} target="_blank">
-            <button className="github-btn">View Code</button>
-          </a>
-        </div>
+  <h4>Tech Stack</h4>
+  <div className="stack-tags">
+    {selectedProject.stack.map((tech,i)=>(
+      <span key={i}>{tech}</span>
+    ))}
+  </div>
 
-      </div>
+  <div className="project-links">
+    <a href={selectedProject.github} target="_blank">
+      <button className="github-btn">
+        <FaGithub style={{marginRight:"8px"}} />
+        View Code
+      </button>
+    </a>
+  </div>
+
+</div>
     </div>
   </div>
 )}
 
-<section className="cert-section">
+<section id="certificate" className="cert-section">
 
   <div className="cert-header">
     <h2>Certifications</h2>
@@ -398,7 +440,7 @@ function App() {
 
 </section>
 
-<section className="education-section">
+<section id="education" className="education-section">
 
   <div className="education-header">
     <h2>Education</h2>
@@ -407,18 +449,11 @@ function App() {
 
   <div className="education-grid">
 
-    <div className="edu-card">
-      <h3>10th</h3>
-      <h4>Fatima Central School, Piravom</h4>
-      <p>2018 - 2019</p>
-      <span>86%</span>
-    </div>
-
-    <div className="edu-card">
-      <h3>12th - Computer Science</h3>
-      <h4>MKM HSS, Piravom</h4>
-      <p>2019 - 2021</p>
-      <span>94%</span>
+    <div className="edu-card active">
+      <h3>Master of Computer<br></br> Application</h3>
+      <h4>Muthoot Institute Of Technology And Science</h4>
+      <p>2024 - 2026</p>
+      <span>Pursuing</span>
     </div>
 
     <div className="edu-card">
@@ -428,11 +463,18 @@ function App() {
       <span>79%</span>
     </div>
 
-    <div className="edu-card active">
-      <h3>Master of Computer<br></br> Application</h3>
-      <h4>Muthoot Institute Of Technology And Science</h4>
-      <p>2024 - 2026</p>
-      <span>Pursuing</span>
+     <div className="edu-card">
+      <h3>12th - Computer Science</h3>
+      <h4>MKM HSS, Piravom</h4>
+      <p>2019 - 2021</p>
+      <span>94%</span>
+    </div>
+
+    <div className="edu-card">
+      <h3>10th</h3>
+      <h4>Fatima Central School, Piravom</h4>
+      <p>2018 - 2019</p>
+      <span>86%</span>
     </div>
 
   </div>
@@ -440,7 +482,7 @@ function App() {
 </section>
 
 {/* ===== CONTACT SECTION ===== */}
-<section className="contact-section">
+<section id="contact" className="contact-section">
 
   <div className="contact-left">
     <h2>Initialize <br /> Collaboration.</h2>
@@ -455,9 +497,9 @@ function App() {
     </div>
 
     <div className="contact-socials">
-      <a href="https://github.com/YOURUSERNAME" target="_blank"><FaGithub /></a>
-      <a href="https://linkedin.com/in/YOURUSERNAME" target="_blank"><FaLinkedin /></a>
-      <a href="https://instagram.com/YOURUSERNAME" target="_blank"><FaInstagram /></a>
+      <a href="https://github.com/gokul-raj-c" target="_blank"><FaGithub /></a>
+      <a href="https://www.linkedin.com/in/gokul-raj-c" target="_blank"><FaLinkedin /></a>
+      <a href="https://www.instagram.com/gokulrajc_" target="_blank"><FaInstagram /></a>
     </div>
   </div>
 
@@ -484,11 +526,11 @@ function App() {
 
   <div className="footer-content">
     <div className="footer-left">
-      © 2026 DEV.IO [ SYSTEM ACTIVE ]
+      © 2026 [ SYSTEM ACTIVE ]
     </div>
 
     <div className="footer-right">
-      DESIGNED IN KERALA, INDIA
+      DESIGNED BY GOKUL RAJ C
     </div>
   </div>
 
