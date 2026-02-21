@@ -255,7 +255,7 @@ function App() {
       I am currently pursuing my Master of Computer Applications (MCA) at 
       Muthoot Institute of Technology and Science, after completing my BCA. <br></br>
       I am passionate about software development, machine learning, and building 
-      real-world applications that solve meaningful problems.
+      real world applications that solve meaningful problems.
       <br /><br />
       I have developed multiple projects in ML, DL, full stack web development, and 
       Java-based applications. I enjoy learning new technologies and continuously 
@@ -269,7 +269,7 @@ function App() {
 
     {/* NEW PROFILE DETAILS */}
     <div className="about-details">
-      <div><strong>Email:</strong> gokulraj63@email.com</div>
+      <div><strong>Email:</strong> gokulrajc63@gmail.com</div>
       <div><strong>Phone:</strong> +91 90613 93951</div>
       <div><strong>Age:</strong> 22</div>
       <div><strong>DOB:</strong> 11 April 2003</div>
@@ -286,7 +286,7 @@ function App() {
       <div className="icon blue">💻</div>
       <div>
         <h4>Full Stack Web Development</h4>
-        <span>MERN Stack, React.js, Node.js, PHP, MySQL</span>
+        <span>Flask, HTML, React.js, Node.js, MongoDB, PHP, MySQL</span>
       </div>
     </div>
 
@@ -294,7 +294,7 @@ function App() {
       <div className="icon green">📱</div>
       <div>
         <h4>Machine Learning & AI</h4>
-        <span>Python, Deep Learning, Computer Vision, Data Analysis</span>
+        <span>Python, Deep Learning, Data Analysis</span>
       </div>
     </div>
 
@@ -302,7 +302,7 @@ function App() {
       <div className="icon purple">🎥</div>
       <div>
         <h4>Software Development</h4>
-        <span>Java, C++, Problem Solving, OOP, Database Systems</span>
+        <span>Java, C++, OOP, Database Systems</span>
       </div>
     </div>
 
@@ -337,7 +337,7 @@ function App() {
 </section>
 
 <section id="projects" className="projects">
-  <h2 className="section-title">Featured Deployments</h2>
+  <h2 className="section-title">Projects</h2>
 
   <div className="project-grid">
     {PROJECTS.map((project)=>(
@@ -492,8 +492,8 @@ function App() {
     <div className="contact-info">
       <div>📍 Muvattupuzha, Kerala</div>
       <div>💼 Open for Work</div>
-      <div>✉ gokulraj@email.com</div>
-      <div>📞 +91 98765 43210</div>
+      <div>✉ gokulrajc63@gmail.com</div>
+      <div>📞 +91 90613 93951</div>
     </div>
 
     <div className="contact-socials">
