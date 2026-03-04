@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { useState } from "react";
+import { useState,useEffect} from "react";
 
 import { FaCode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -170,9 +170,35 @@ const CERTIFICATES = [
   }
 ];
 
+const languages = [
+  "Hello, I'm Gokul Raj C",
+  "നമസ്കാരം, ഞാൻ Gokul Raj C",
+  "नमस्ते, मैं Gokul Raj C हूँ",
+  "Hola, soy Gokul Raj C",
+  "こんにちは、私は Gokul Raj C です",
+  "你好，我是 Gokul Raj C",
+];
+
+
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
+
+  const [currentLang, setCurrentLang] = useState(languages[0]);
+
+useEffect(() => {
+  let index = 0;
+
+  const interval = setInterval(() => {
+    index = (index + 1) % languages.length;
+    setCurrentLang(languages[index]);
+  }, 700);
+
+  return () => clearInterval(interval);
+}, []);
+
+
+
   return (
     <div className="main">
 
@@ -180,7 +206,9 @@ function App() {
       <nav className="navbar">
 
         <div className="logo">
-          <h3>GOKUL RAJ C</h3>
+         <a style={{ color: "white", textDecoration: "none" }} href="#">
+    <h3>GOKUL RAJ C</h3>
+  </a>
         </div>
 
        <ul className="nav-links">
@@ -199,6 +227,12 @@ function App() {
         </div>
 
       </nav>
+
+      <section id="#" className="intro-name">
+  <p className="name-languages">
+    {currentLang}
+  </p>
+</section>
 
       {/* ===== HERO ===== */}
       <section id="home" className="hero">
