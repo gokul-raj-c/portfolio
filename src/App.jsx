@@ -141,6 +141,8 @@ import grabit from './assets/projects/grabit.png';
 import quizzo from './assets/projects/quizzo.png';
 import repairvision from './assets/projects/repairvision.png';
 
+import profile from "./assets/images/profile.png"
+
 
 // --- DATA: CERTIFICATES ---
 const CERTIFICATES = [
@@ -275,10 +277,25 @@ useEffect(() => {
     </a>
 
   </div>
-
       </section>
 
-      {/* ===== ABOUT SECTION ===== */}
+ {/* ===== ABOUT SECTION ===== 
+      <section className="hero-visual">
+
+  <div className="hero-text-scroll">
+    <div className="scroll-track">
+      • MACHINE LEARNING • FULL STACK • DEEP LEARNING • MACHINE LEARNING • FULL STACK • DEEP LEARNING •
+    </div>
+  </div>
+
+  <div className="hero-image">
+    <img src={profile} alt="Gokul Raj C"/>
+  </div>
+
+</section>
+*/}
+
+     
 {/* ===== ABOUT SECTION ===== */}
 <section id="about" className="about">
 

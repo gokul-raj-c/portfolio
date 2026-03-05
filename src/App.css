@@ -890,9 +890,10 @@ body{
   }
 }
 
-section{
-  padding:120px 80px;
-}
+/* ================= NAME ================= */
+
+
+
 
 /* INTRO SECTION */
 .intro-name{
@@ -938,4 +939,84 @@ section{
 @keyframes blink{
   0%,100%{opacity:1;}
   50%{opacity:0;}
+}
+
+
+
+/* ================= HERO VISUAL ================= */
+
+
+.hero-visual{
+  position:relative;
+  min-height:40vh;
+  display:flex;
+  justify-content:center;
+  overflow:hidden;
+  margin-top:90px; /* navbar offset */
+}
+
+/* IMAGE */
+.hero-image{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+}
+
+.hero-image img{
+  width:420px;
+  max-width:90%;
+  animation:float 6s ease-in-out infinite;
+}
+
+/* BACKGROUND TEXT CONTAINER */
+.hero-text-scroll{
+  position:absolute;
+  top:65%;
+  left:0;
+  width:100%;
+  transform:translateY(-50%);
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.hero-image::before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  background:#2563eb;
+  filter:blur(140px);
+  opacity:0.25;
+  z-index:-1;
+}
+
+/* SCROLLING TEXT */
+.scroll-track{
+  display:inline-flex;
+  gap:120px;
+  font-size:180px;
+  font-weight:900;
+  letter-spacing:10px;
+  color:rgba(255,255,255,0.05);
+  animation:scrollText 20s linear infinite;
+}
+
+
+/* TEXT SCROLL */
+@keyframes scrollText{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+/* FLOATING IMAGE */
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0px);}
 }
