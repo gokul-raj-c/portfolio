@@ -107,8 +107,32 @@ body{
 
 /* ================= HERO ================= */
 .hero{
-  padding:180px clamp(40px,8vw,120px) 120px;
-  max-width:1100px;
+  padding:140px clamp(40px,8vw,120px) 80px;
+  max-width:1300px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  align-items:center;   /* important */
+  gap:80px;
+}
+
+.hero-left{
+  max-width:750px;
+}
+
+.hero-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+}
+
+.hero-right img{
+  width:460px;
+  max-width:100%;
+  border-radius:22px;
+  
 }
 
 .tag{
@@ -121,15 +145,18 @@ body{
 }
 
 .hero h1{
-  font-size:86px;
+  font-size:82px;
   font-weight:600;
 }
 
 .hero h2{
-  font-size:72px;
+  font-size:64px;
+  line-height:1.1;
   color:#6b7280;
   margin-top:5px;
 }
+
+
 
 .hero p{
   margin-top:25px;
@@ -943,80 +970,3 @@ body{
 
 
 
-/* ================= HERO VISUAL ================= */
-
-
-.hero-visual{
-  position:relative;
-  min-height:40vh;
-  display:flex;
-  justify-content:center;
-  overflow:hidden;
-  margin-top:90px; /* navbar offset */
-}
-
-/* IMAGE */
-.hero-image{
-  position:absolute;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:5;
-}
-
-.hero-image img{
-  width:420px;
-  max-width:90%;
-  animation:float 6s ease-in-out infinite;
-}
-
-/* BACKGROUND TEXT CONTAINER */
-.hero-text-scroll{
-  position:absolute;
-  top:65%;
-  left:0;
-  width:100%;
-  transform:translateY(-50%);
-  overflow:hidden;
-  white-space:nowrap;
-}
-
-.hero-image::before{
-  content:"";
-  position:absolute;
-  width:350px;
-  height:350px;
-  background:#2563eb;
-  filter:blur(140px);
-  opacity:0.25;
-  z-index:-1;
-}
-
-/* SCROLLING TEXT */
-.scroll-track{
-  display:inline-flex;
-  gap:120px;
-  font-size:180px;
-  font-weight:900;
-  letter-spacing:10px;
-  color:rgba(255,255,255,0.05);
-  animation:scrollText 20s linear infinite;
-}
-
-
-/* TEXT SCROLL */
-@keyframes scrollText{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(-50%);
-  }
-}
-
-/* FLOATING IMAGE */
-@keyframes float{
-  0%{transform:translateY(0px);}
-  50%{transform:translateY(-15px);}
-  100%{transform:translateY(0px);}
-}

@@ -141,7 +141,7 @@ import grabit from './assets/projects/grabit.png';
 import quizzo from './assets/projects/quizzo.png';
 import repairvision from './assets/projects/repairvision.png';
 
-import profile from "./assets/images/profile.png"
+import profile from "./assets/images/profilee.png"
 
 
 // --- DATA: CERTIFICATES ---
@@ -237,47 +237,51 @@ useEffect(() => {
 </section>
 
       {/* ===== HERO ===== */}
+
       <section id="home" className="hero">
 
-        <div className="tag">HELLO WORLD, I'M</div>
+  {/* LEFT SIDE */}
+  <div className="hero-left">
 
-        <h1>GOKUL RAJ C</h1>
-        <h2>MCA STUDENT & SOFTWARE DEVELOPER</h2>
+    <div className="tag">HELLO WORLD, I'M</div>
 
-        <p>
-          I build scalable web and AI-powered applications & I'm from <b>Kerala, India.</b>
-          <br />
-          Specialized in <b>Java, Python, Machine Learning, Deep Learning and Full Stack Development.</b>
-        </p>
+    <h1>GOKUL RAJ C</h1>
+    <h2>MCA STUDENT & SOFTWARE DEVELOPER</h2>
 
-        <div className="buttons">
+    <p>
+      I build scalable web and AI-powered applications & I'm from <b>Kerala, India.</b>
+      <br />
+      Specialized in <b>Java, Python, Machine Learning, Deep Learning and Full Stack Development.</b>
+    </p>
 
-  <a href="#projects">
-    <button className="btn-primary">View Work →</button>
+    <div className="buttons">
+      <a href="/Resumee.pdf" download="Resumee.pdf">
+    <button className="btn-primary">Download Resume ↓</button>
   </a>
+    </div>
 
-  <a href="#contact">
-    <button className="btn-outline">Contact</button>
-  </a>
+    <div className="socials">
+      <a href="https://github.com/gokul-raj-c" target="_blank">
+        <FaGithub />
+      </a>
 
-</div>
+      <a href="https://www.linkedin.com/in/gokul-raj-c" target="_blank">
+        <FaLinkedin />
+      </a>
 
-        {/* SOCIAL ICONS */}
-  <div className="socials">
-    <a href="https://github.com/gokul-raj-c" target="_blank">
-      <FaGithub />
-    </a>
-
-    <a href="https://www.linkedin.com/in/gokul-raj-c" target="_blank">
-      <FaLinkedin />
-    </a>
-
-    <a href="https://www.instagram.com/gokulrajc_" target="_blank">
-      <FaInstagram />
-    </a>
+      <a href="https://www.instagram.com/gokulrajc_" target="_blank">
+        <FaInstagram />
+      </a>
+    </div>
 
   </div>
-      </section>
+
+  {/* RIGHT SIDE */}
+  <div className="hero-right">
+    <img src={profile} alt="Gokul Raj C"/>
+  </div>
+
+</section>
 
  {/* ===== ABOUT SECTION ===== 
       <section className="hero-visual">
@@ -289,7 +293,7 @@ useEffect(() => {
   </div>
 
   <div className="hero-image">
-    <img src={profile} alt="Gokul Raj C"/>
+    
   </div>
 
 </section>
