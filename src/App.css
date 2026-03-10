@@ -970,3 +970,33 @@ body{
 
 
 
+.resume-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  background:white;
+  color:black;
+  padding:16px 34px;
+  border-radius:8px;
+
+  font-weight:600;
+  text-decoration:none;
+
+  transition:0.3s ease;
+}
+
+.resume-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* arrow animation */
+.arrow{
+  display:inline-block;
+  transition:transform 0.3s ease;
+}
+
+.resume-btn:hover .arrow{
+  transform:translateY(4px);
+}

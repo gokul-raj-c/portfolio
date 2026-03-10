@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { useState,useEffect} from "react";
+import Loader from "./components/Loader";
 
 import { FaCode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -91,7 +92,7 @@ const PROJECTS = [
       desc: "AI Career Guidance Platform",
       image: careervista,
       longDesc: "AI-powered platform that analyzes skills and suggests career paths with learning roadmap.",
-      stack: ["Python", "Flask", "Machine Learning", "CNN", "OpenCV", "HTML", "CSS", "JavaScript"],
+      stack: ["Python", "Flask", "Machine Learning", "MongoDB", "HTML", "CSS", "JavaScript"],
       color: "#6d28d9",
       github: "https://github.com/gokul-raj-c/Career-Vista"
   },
@@ -167,7 +168,7 @@ const CERTIFICATES = [
   { 
     title: "End To End Project Life Cycle Using MERN Stack", 
     issuer: "Zero Pixels", 
-    date: "2024",
+    date: "2025",
     image: mern 
   }
 ];
@@ -187,6 +188,15 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const [currentLang, setCurrentLang] = useState(languages[0]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 3500);
+
+  return () => clearTimeout(timer);
+}, []);
 
 useEffect(() => {
   let index = 0;
@@ -201,8 +211,12 @@ useEffect(() => {
 
 
 
-  return (
-    <div className="main">
+ if (loading) {
+  return <Loader />;
+}
+
+return (
+  <div className="main">
 
       {/* ===== HEADER ===== */}
       <nav className="navbar">
@@ -255,10 +269,13 @@ useEffect(() => {
     </p>
 
     <div className="buttons">
-      <a href="/Resumee.pdf" download="Resumee.pdf">
-    <button className="btn-primary">Download Resume ↓</button>
-  </a>
+  <a href="/Resumee.pdf" download="Resumee.pdf" className="resume-btn">
+  Download Resume
+  <span className="arrow">↓</span>
+</a>
     </div>
+
+    
 
     <div className="socials">
       <a href="https://github.com/gokul-raj-c" target="_blank">
