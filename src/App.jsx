@@ -269,7 +269,7 @@ return (
     </p>
 
     <div className="buttons">
-  <a href="/Resume.pdf" download="Resume.pdf" className="resume-btn">
+  <a href="/ResumeGokulRajC.pdf" download="ResumeGokulRajC.pdf" className="resume-btn">
   Download Resume
   <span className="arrow">↓</span>
 </a>
