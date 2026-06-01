@@ -190,6 +190,49 @@ function App() {
   const [currentLang, setCurrentLang] = useState(languages[0]);
   const [loading, setLoading] = useState(true);
 
+  const [formData, setFormData] = useState({
+  name: "",
+  message: "",
+});
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+
+    const response = await fetch("https://porrtfolio-backend-xkxc.onrender.com/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    setFormData({
+      name: "",
+      message: "",
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    alert("Failed to send message");
+
+  }
+};
+
   useEffect(() => {
   const timer = setTimeout(() => {
     setLoading(false);
@@ -575,19 +618,39 @@ return (
     </div>
   </div>
 
-  <div className="contact-right">
-    <form className="contact-form">
-      <label>IDENTITY</label>
-      <input type="text" placeholder="Name / Company" />
+ <div className="contact-right">
 
-      <label>TRANSMISSION</label>
-      <textarea placeholder="Project details..." rows="5"></textarea>
+  <form className="contact-form" onSubmit={handleSubmit}>
 
-      <button type="submit" className="contact-btn">
-        SEND MESSAGE →
-      </button>
-    </form>
-  </div>
+    <label>IDENTITY</label>
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Name / Company / Email"
+      value={formData.name}
+      onChange={handleChange}
+      required
+    />
+
+    <label>TRANSMISSION</label>
+
+    <textarea
+      name="message"
+      placeholder="Project details..."
+      rows="5"
+      value={formData.message}
+      onChange={handleChange}
+      required
+    ></textarea>
+
+    <button type="submit" className="contact-btn">
+      SEND MESSAGE →
+    </button>
+
+  </form>
+
+</div>
 
 </section>
 
