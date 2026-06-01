@@ -294,9 +294,9 @@ return (
   </div>
 
   {/* RIGHT SIDE */}
-  <div className="hero-right">
+  {/* <div className="hero-right">
     <img src={profile} alt="Gokul Raj C"/>
-  </div>
+  </div> */}
 
 </section>
 
