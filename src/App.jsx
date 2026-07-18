@@ -65,7 +65,25 @@ const TECH_CATEGORIES = {
   ]
 };
 
+import readmegen from './assets/projects/readmegen.png';
+import authentify from './assets/projects/authentify.png';
+import careervista from './assets/projects/careervista.png';
+import garage4 from './assets/projects/garage4.png';
+import grabit from './assets/projects/grabit.png';
+import quizzo from './assets/projects/quizzo.png';
+import repairvision from './assets/projects/repairvision.png';
+
 const PROJECTS = [
+  { 
+      id: 1,
+      title: "Readme Gen", 
+      desc: "Readme File Generation Version 1",
+      image: readmegen,
+      longDesc: "Generate Readme files for your projects.",
+      stack: ["Python"],
+      color: "#7c3aed",
+      github: "https://github.com/gokul-raj-c/Readme-Gen"
+  },
   { 
       id: 1,
       title: "Repair Vision", 
@@ -135,12 +153,6 @@ import python2 from './assets/certificate/Python2.png';
 import mern from './assets/certificate/mern.png';
 import iot from './assets/certificate/iot.png';
 
-import authentify from './assets/projects/authentify.png';
-import careervista from './assets/projects/careervista.png';
-import garage4 from './assets/projects/garage4.png';
-import grabit from './assets/projects/grabit.png';
-import quizzo from './assets/projects/quizzo.png';
-import repairvision from './assets/projects/repairvision.png';
 
 import profile from "./assets/images/profilee.png"
 
@@ -303,7 +315,7 @@ return (
     <div className="tag">HELLO WORLD, I'M</div>
 
     <h1>GOKUL RAJ C</h1>
-    <h2>MCA STUDENT & SOFTWARE DEVELOPER</h2>
+    <h2>MCA GRADUATE</h2>
 
     <p>
       I build scalable web and AI-powered applications & I'm from <b>Kerala, India.</b>
@@ -367,9 +379,9 @@ return (
     <h2>About & Services</h2>
 
     <p>
-      I am currently pursuing my Master of Computer Applications (MCA) at 
+      I recently graduated my Master of Computer Applications (MCA) degree at 
       Muthoot Institute of Technology and Science, after completing my BCA. <br></br>
-      I am passionate about software development, machine learning, and building 
+      I am passionate about data science, software development, machine learning, and building 
       real world applications that solve meaningful problems.
       <br /><br />
       I have developed multiple projects in ML, DL, full stack web development, and 
@@ -568,28 +580,28 @@ return (
       <h3>Master of Computer<br></br> Application</h3>
       <h4>Muthoot Institute Of Technology And Science</h4>
       <p>2024 - 2026</p>
-      <span>Pursuing</span>
+      <span>81.3%</span>
     </div>
 
     <div className="edu-card">
       <h3>Bachelor of Computer Application</h3>
       <h4>BPC College, Piravom</h4>
       <p>2021 - 2024</p>
-      <span>79%</span>
+      <span>79.7%</span>
     </div>
 
      <div className="edu-card">
       <h3>12th - Computer Science</h3>
       <h4>MKM HSS, Piravom</h4>
       <p>2019 - 2021</p>
-      <span>94%</span>
+      <span>93.7%</span>
     </div>
 
     <div className="edu-card">
       <h3>10th</h3>
       <h4>Fatima Central School, Piravom</h4>
       <p>2018 - 2019</p>
-      <span>86%</span>
+      <span>85.6%</span>
     </div>
 
   </div>
