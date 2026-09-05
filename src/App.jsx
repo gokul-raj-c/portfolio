@@ -152,6 +152,7 @@ import python1 from './assets/certificate/Python1.png';
 import python2 from './assets/certificate/Python2.png';
 import mern from './assets/certificate/mern.png';
 import iot from './assets/certificate/iot.png';
+import fullstack from './assets/certificate/fullstack.jpg'
 
 
 import profile from "./assets/images/profilee.png"
@@ -159,6 +160,12 @@ import profile from "./assets/images/profilee.png"
 
 // --- DATA: CERTIFICATES ---
 const CERTIFICATES = [
+  { 
+    title: "The Complete Full-Stack Web Development Bootcamp", 
+    issuer: "Udemy", 
+    date: "2026", 
+    image: fullstack 
+  },
   { 
     title: "Python For Data Science and Machine Learning Part 1", 
     issuer: "LinkedIn Learning", 
@@ -576,7 +583,7 @@ return (
 
   <div className="education-grid">
 
-    <div className="edu-card active">
+    <div className="edu-card">
       <h3>Master of Computer<br></br> Application</h3>
       <h4>Muthoot Institute Of Technology And Science</h4>
       <p>2024 - 2026</p>
