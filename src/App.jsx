@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
 import { useState,useEffect} from "react";
-import Loader from "./components/Loader";
+
 
 import { FaCode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import {
   FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaGithub, FaLinux, FaLinkedin, FaInstagram, FaFacebook
 } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 import {
   SiJavascript, SiHtml5, SiCss3, SiExpress,
@@ -85,7 +86,7 @@ const PROJECTS = [
       github: "https://github.com/gokul-raj-c/Readme-Gen"
   },
   { 
-      id: 1,
+      id: 2,
       title: "Repair Vision", 
       desc: "Car Damage Detection",
       image: repairvision,
@@ -95,7 +96,7 @@ const PROJECTS = [
       github: "https://github.com/gokul-raj-c/Repair-Vision"
   },
   { 
-      id: 2,
+      id: 3,
       title: "Authentify", 
       desc: "Deep Fake Image Detection",
       image: authentify,
@@ -105,7 +106,7 @@ const PROJECTS = [
       github: "https://github.com/gokul-raj-c/Authentify"
   },
   { 
-      id: 3,
+      id: 4,
       title: "Career Vista", 
       desc: "AI Career Guidance Platform",
       image: careervista,
@@ -115,7 +116,7 @@ const PROJECTS = [
       github: "https://github.com/gokul-raj-c/Career-Vista"
   },
   { 
-      id: 4,
+      id: 5,
       title: "Garage4", 
       desc: "Car Rental Web App",
       image: garage4,
@@ -125,7 +126,7 @@ const PROJECTS = [
       github: "https://github.com/gokul-raj-c/Garage4"
   },
   { 
-      id: 5,
+      id: 6,
       title: "Grab-It",
       desc: "E-commerce Web App",
       image: grabit,
@@ -135,7 +136,7 @@ const PROJECTS = [
       github: "https://github.com/gokul-raj-c/grab-it"
   },
   { 
-      id: 6, 
+      id: 7, 
       title: "Quizzo",
       desc: "Quiz Web Application",
       image: quizzo,
@@ -207,7 +208,8 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const [currentLang, setCurrentLang] = useState(languages[0]);
-  const [loading, setLoading] = useState(true);
+  
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [formData, setFormData] = useState({
   name: "",
@@ -252,13 +254,7 @@ const handleSubmit = async (e) => {
   }
 };
 
-  useEffect(() => {
-  const timer = setTimeout(() => {
-    setLoading(false);
-  }, 3500);
-
-  return () => clearTimeout(timer);
-}, []);
+  
 
 useEffect(() => {
   let index = 0;
@@ -272,39 +268,71 @@ useEffect(() => {
 }, []);
 
 
-
- if (loading) {
-  return <Loader />;
-}
-
 return (
   <div className="main">
 
       {/* ===== HEADER ===== */}
       <nav className="navbar">
 
-        <div className="logo">
-         <a style={{ color: "white", textDecoration: "none" }} href="#">
-    <h3>GOKUL RAJ C</h3>
-  </a>
-        </div>
+  <div className="logo">
+    <a
+      style={{ color: "white", textDecoration: "none" }}
+      href="#home"
+    >
+      <h3>GOKUL RAJ C</h3>
+    </a>
+  </div>
 
-       <ul className="nav-links">
-  <li><a href="#home">INDEX</a></li>
-  <li><a href="#about">ABOUT</a></li>
-  <li><a href="#tech">STACK</a></li>
-  <li><a href="#projects">PROJECTS</a></li>
-  <li><a href="#certificate">CERTIFICATES</a></li>
-  <li><a href="#education">EDUCATION</a></li>
-  <li><a href="#contact">CONTACT</a></li>
-</ul>
+  <button
+    className="menu-toggle"
+    onClick={() => setMenuOpen(!menuOpen)}
+    aria-label="Toggle navigation"
+  >
+    {menuOpen ? <FaTimes /> : <FaBars />}
+  </button>
 
-        <div className="status">
-          <span className="dot"></span>
-          AVAILABLE
-        </div>
+  <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+    <li>
+      <a href="#home" onClick={() => setMenuOpen(false)}>INDEX</a>
+    </li>
 
-      </nav>
+    <li>
+      <a href="#about" onClick={() => setMenuOpen(false)}>ABOUT</a>
+    </li>
+
+    <li>
+      <a href="#tech" onClick={() => setMenuOpen(false)}>STACK</a>
+    </li>
+
+    <li>
+      <a href="#projects" onClick={() => setMenuOpen(false)}>PROJECTS</a>
+    </li>
+
+    <li>
+      <a href="#certificate" onClick={() => setMenuOpen(false)}>
+        CERTIFICATES
+      </a>
+    </li>
+
+    <li>
+      <a href="#education" onClick={() => setMenuOpen(false)}>
+        EDUCATION
+      </a>
+    </li>
+
+    <li>
+      <a href="#contact" onClick={() => setMenuOpen(false)}>
+        CONTACT
+      </a>
+    </li>
+  </ul>
+
+  <div className="status">
+    <span className="dot"></span>
+    AVAILABLE
+  </div>
+
+</nav>
 
       <section id="#" className="intro-name">
   <p className="name-languages">
@@ -322,12 +350,12 @@ return (
     <div className="tag">HELLO WORLD, I'M</div>
 
     <h1>GOKUL RAJ C</h1>
-    <h2>MCA GRADUATE</h2>
+    <h2>Junior Developer | Data Science </h2>
 
     <p>
       I build scalable web and AI-powered applications & I'm from <b>Kerala, India.</b>
       <br />
-      Specialized in <b>Java, Python, Machine Learning, Deep Learning and Full Stack Development.</b>
+      Specialized in <b>Python, Machine Learning, Deep Learning, AI and Full Stack Development.</b>
     </p>
 
     <div className="buttons">
