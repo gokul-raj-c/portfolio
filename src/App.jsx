@@ -149,11 +149,15 @@ const PROJECTS = [
 
 
 // --- IMAGE IMPORTS (Placeholders) ---
-import python1 from './assets/certificate/Python1.png';
-import python2 from './assets/certificate/Python2.png';
-import mern from './assets/certificate/mern.png';
-import iot from './assets/certificate/iot.png';
-import fullstack from './assets/certificate/fullstack.jpg'
+import python_ai from './assets/certificate/python_ai_datascience.jpg';
+import data_analysis from './assets/certificate/data_analysis.jpg';
+import db_datascience from './assets/certificate/db_datascience.jpg';
+import python_datascience_p1 from './assets/certificate/python_datascience_p1.png';
+import python_datascience_p2 from './assets/certificate/python_datascience_p2.png';
+import fullstack_web from './assets/certificate/fullstack_web.jpg'
+import zero_pixels_mern_stack from './assets/certificate/zero_pixels_mern_stack.png';
+import iot_nptel from './assets/certificate/iot_nptel.png';
+
 
 
 import profile from "./assets/images/profilee.png"
@@ -162,35 +166,53 @@ import profile from "./assets/images/profilee.png"
 // --- DATA: CERTIFICATES ---
 const CERTIFICATES = [
   { 
+    title: "Python for Data Science, AI & Development", 
+    issuer: "Coursera", 
+    date: "2026", 
+    image: python_ai 
+  },
+  { 
+    title: "Data Analysis with Python", 
+    issuer: "Coursera", 
+    date: "2026", 
+    image: data_analysis 
+  },
+  { 
+    title: "Databases and SQL for Data Science with Python", 
+    issuer: "Coursera", 
+    date: "2026", 
+    image: db_datascience 
+  },
+  { 
     title: "The Complete Full-Stack Web Development Bootcamp", 
     issuer: "Udemy", 
     date: "2026", 
-    image: fullstack 
+    image: fullstack_web
   },
   { 
     title: "Python For Data Science and Machine Learning Part 1", 
     issuer: "LinkedIn Learning", 
     date: "2025", 
-    image: python1 
+    image: python_datascience_p1
   },
   { 
     title: "Python For Data Science and Machine Learning Part 2", 
     issuer: "LinkedIn Learning", 
     date: "2025", 
-    image: python2 
-  },
-  { 
-    title: "Introduction to Internet Of Things - IIT Kharagpur", 
-    issuer: "NPTEL", 
-    date: "2025",
-    image: iot 
+    image: python_datascience_p2
   },
   { 
     title: "End To End Project Life Cycle Using MERN Stack", 
     issuer: "Zero Pixels", 
     date: "2025",
-    image: mern 
-  }
+    image: zero_pixels_mern_stack
+  },
+  { 
+    title: "Introduction to Internet Of Things - IIT Kharagpur", 
+    issuer: "NPTEL", 
+    date: "2025",
+    image: iot_nptel 
+  },
 ];
 
 const languages = [
@@ -206,6 +228,7 @@ const languages = [
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
 
   const [currentLang, setCurrentLang] = useState(languages[0]);
   
@@ -580,27 +603,81 @@ return (
   </div>
 
   <div className="cert-grid">
-    {CERTIFICATES.map((cert, index) => (
-      <div className="cert-card" key={index}>
+  {CERTIFICATES.map((cert, index) => (
+    <div
+      className="cert-card"
+      key={index}
+      onClick={() => setSelectedCertificate(cert)}
+    >
 
-        <div className="cert-img">
-          <img src={cert.image} alt={cert.title}/>
+      <div className="cert-img">
+        <img src={cert.image} alt={cert.title} />
+      </div>
+
+      <div className="cert-info">
+        <h3>{cert.title}</h3>
+
+        <div className="cert-meta">
+          <span>{cert.issuer}</span>
+          <span>{cert.date}</span>
         </div>
+      </div>
 
-        <div className="cert-info">
-          <h3>{cert.title}</h3>
+    </div>
+  ))}
+</div>
 
-          <div className="cert-meta">
-            <span>{cert.issuer}</span>
-            <span>{cert.date}</span>
-          </div>
+</section>
+
+{selectedCertificate && (
+  <div
+    className="modal-overlay"
+    onClick={() => setSelectedCertificate(null)}
+  >
+    <div
+      className="modal-box certificate-modal"
+      onClick={(e) => e.stopPropagation()}
+    >
+
+      {/* Certificate Image */}
+      <div className="certificate-large-image">
+
+        <img
+          src={selectedCertificate.image}
+          alt={selectedCertificate.title}
+        />
+
+        {/* Close Button */}
+        <button
+          className="certificate-close"
+          onClick={() => setSelectedCertificate(null)}
+          aria-label="Close certificate"
+        >
+          ✕
+        </button>
+
+      </div>
+
+      {/* Certificate Information */}
+      <div className="certificate-details">
+
+        <h3>{selectedCertificate.title}</h3>
+
+        <div className="certificate-meta">
+          <span>
+            <strong>Issuer:</strong> {selectedCertificate.issuer}
+          </span>
+
+          <span>
+            <strong>Year:</strong> {selectedCertificate.date}
+          </span>
         </div>
 
       </div>
-    ))}
-  </div>
 
-</section>
+    </div>
+  </div>
+)}
 
 <section id="education" className="education-section">
 
