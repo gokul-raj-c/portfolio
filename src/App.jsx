@@ -380,13 +380,25 @@ return (
       <br />
       Specialized in <b>Python, Machine Learning, Deep Learning, AI and Full Stack Development.</b>
     </p>
+<div className="buttons">
+  <a
+    href="https://drive.google.com/file/d/1jxt0Xf40ATTN0QulDem8W4Nrri1zeW1y/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="resume-btn"
+  >
+    View Resume
+  </a>
 
-    <div className="buttons">
-  <a href="/ResumeGokulRajC.pdf" download="ResumeGokulRajC.pdf" className="resume-btn">
-  Download Resume
-  <span className="arrow">↓</span>
-</a>
-    </div>
+  <a
+    href="/Gokul_Raj_C_Resume_Final.pdf"
+    download="Gokul_Raj_C_Resume_Final.pdf"
+    className="resume-btn"
+  >
+    Download Resume
+    <span className="arrow">↓</span>
+  </a>
+</div>
 
     
 
