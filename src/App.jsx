@@ -151,7 +151,7 @@ const PROJECTS = [
 // --- IMAGE IMPORTS (Placeholders) ---
 import python_ai from './assets/certificate/python_ai_datascience.jpg';
 import data_analysis from './assets/certificate/data_analysis.jpg';
-import db_datascience from './assets/certificate/db_datascience.jpg';
+//import db_datascience from './assets/certificate/db_datascience.jpg';
 import python_datascience_p1 from './assets/certificate/python_datascience_p1.png';
 import python_datascience_p2 from './assets/certificate/python_datascience_p2.png';
 import fullstack_web from './assets/certificate/fullstack_web.jpg'
@@ -177,12 +177,7 @@ const CERTIFICATES = [
     date: "2026", 
     image: data_analysis 
   },
-  { 
-    title: "Databases and SQL for Data Science with Python", 
-    issuer: "Coursera", 
-    date: "2026", 
-    image: db_datascience 
-  },
+  
   { 
     title: "The Complete Full-Stack Web Development Bootcamp", 
     issuer: "Udemy", 
