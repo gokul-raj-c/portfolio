@@ -151,7 +151,7 @@ const PROJECTS = [
 // --- IMAGE IMPORTS (Placeholders) ---
 import python_ai from './assets/certificate/python_ai_datascience.jpg';
 import data_analysis from './assets/certificate/data_analysis.jpg';
-//import db_datascience from './assets/certificate/db_datascience.jpg';
+import machine_learning from './assets/certificate/machine_learning.jpg';
 import python_datascience_p1 from './assets/certificate/python_datascience_p1.png';
 import python_datascience_p2 from './assets/certificate/python_datascience_p2.png';
 import fullstack_web from './assets/certificate/fullstack_web.jpg'
@@ -165,6 +165,12 @@ import profile from "./assets/images/profilee.png"
 
 // --- DATA: CERTIFICATES ---
 const CERTIFICATES = [
+  { 
+    title: "Machine Learning with Python", 
+    issuer: "Coursera", 
+    date: "2026", 
+    image: machine_learning
+  },
   { 
     title: "Python for Data Science, AI & Development", 
     issuer: "Coursera", 
